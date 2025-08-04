@@ -18,16 +18,16 @@ This repository contains the results of a basic Nmap TCP SYN scan and the corres
 
 During the scan, I identified several open ports on local hosts. Here's what I learned about their associated risks:
 
-| Port | Service       | Risk Level | Description |
-|------|---------------|------------|-------------|
-| 135  | msrpc         | ⚠️ High     | Used by Microsoft RPC. Often targeted by malware for lateral movement in Windows environments. |
-| 445  | microsoft-ds  | ⚠️ High     | SMB protocol. Frequently exploited (e.g., WannaCry ransomware). Should be disabled if unused. |
-| 1042 | afrog         | ❓ Unknown  | Rare port. Possibly a custom or obscure application. Needs further investigation. |
-| 1043 | boinc         | ⚠️ Medium   | Used by distributed computing apps. May expose sensitive compute resources. |
-| 7070 | realserver    | ⚠️ Medium   | RealPlayer streaming. A legacy protocol with known vulnerabilities. |
-| 7778 | interwise     | ⚠️ Medium   | Related to conferencing tools. Legacy; may be unpatched or insecure. |
-| 8080 | http-proxy    | ⚠️ Medium   | Alternate web server port. If exposed, can be a path to web app attacks if not secured. |
-| 53   | domain (DNS)  | ⚠️ Medium   | If DNS is externally exposed, it can be misused in amplification or tunneling attacks. |
+| Port | Service       | Risk Level | 
+|------|---------------|------------|
+| 135  | msrpc         | ⚠️ High     | 
+| 445  | microsoft-ds  | ⚠️ High     | 
+| 1042 | afrog         | ❓ Unknown  | 
+| 1043 | boinc         | ⚠️ Medium   | 
+| 7070 | realserver    | ⚠️ Medium   | 
+| 7778 | interwise     | ⚠️ Medium   | 
+| 8080 | http-proxy    | ⚠️ Medium   | 
+| 53   | domain (DNS)  | ⚠️ Medium   | 
 
 ## 📊 Packet Capture Analysis (Optional – with Wireshark)
 
