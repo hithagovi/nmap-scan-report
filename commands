@@ -1,0 +1,21 @@
+
+# TCP SYN scan on the local network
+sudo nmap -sS 10.0.2.0/24
+# for a faster scan
+sudo nmap -F 10.0.2.0/24
+
+# Save scan results to a text file
+sudo nmap -sS 10.0.2.0/24 -oN scan_results.txt
+
+
+# ---------- Wireshark ----------
+# Start Wireshark with root permissions
+sudo wireshark
+
+# In Wireshark:
+# 1. Select the active interface (e.g., eth0 or wlan0)
+# 2. Start capturing packets (blue shark fin icon)
+# 3. Optional: Apply filter to see only TCP SYN packets:
+tcp.flags.syn == 1 and tcp.flags.ack == 0
+# 4. Stop the capture after the scan finishes
+# 5. Save the capture as .pcapng
